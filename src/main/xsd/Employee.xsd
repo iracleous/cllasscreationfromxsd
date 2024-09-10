@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+	targetNamespace="http://www.journaldev.com/com/journaldev/employee/data"
+	xmlns:empns="http://www.journaldev.com/com/journaldev/employee/data"
+	elementFormDefault="qualified">
+
+	<xs:element name="empRequest" type="empns:EmpRequest"></xs:element>
+	<xs:element name="empResponse" type="empns:EmpResponse"></xs:element>
+
+	<xs:complexType name="EmpRequest">
+		<xs:sequence>
+			<xs:element name="id" type="xs:int" minOccurs="0" maxOccurs="1" />
+			<xs:element name="name" type="xs:string" minOccurs="0" maxOccurs="1" />
+		</xs:sequence>
+	</xs:complexType>
+	
+	<xs:complexType name="EmpResponse">
+		<xs:sequence>
+			<xs:element name="id" type="xs:int" minOccurs="1" maxOccurs="1" />
+			<xs:element name="name" type="xs:string" minOccurs="1" maxOccurs="1" />
+			<xs:element name="role" type="xs:string" minOccurs="1" maxOccurs="unbounded" />
+			<xs:element name="gender" type="xs:string" minOccurs="1" maxOccurs="1" />
+			<xs:element name="salary" type="xs:string" minOccurs="1" maxOccurs="1" />
+		</xs:sequence>
+	</xs:complexType>
+
+</xs:schema>
